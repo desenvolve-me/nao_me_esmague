@@ -1,0 +1,17 @@
+body{
+    align-content: center
+}
+
+#chao {
+    position: absolute;
+    width: 100%;
+    height: 10%;
+    top: 90%;
+    left: 0%;
+}
+
+.bloco{
+    position: absolute;
+    height: 100%;
+    width: 10%;
+}

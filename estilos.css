@@ -1,8 +1,15 @@
-body{
+body {
     align-content: center
 }
 
+#canvas_principal {
+    position: absolute;
+    height:"100%";
+    width:"100%";
+}
+
 #chao {
+    background-image: url('./imagens/chao.png');
     position: absolute;
     width: 100%;
     height: 10%;
@@ -10,15 +17,19 @@ body{
     left: 0%;
 }
 
-.bloco{
+.bloco {
     position: absolute;
     height: 100%;
     width: 10%;
 }
 
-#personagem{  
+#personagem {  
     bottom: 10%;
     height: 25%;
     position: absolute;
     left: 0%;
+}
+
+.esmagador {
+    position: absolute;
 }

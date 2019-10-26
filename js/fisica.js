@@ -96,7 +96,7 @@ document.addEventListener("keydown", function(e){
 });
 
 function cria_esmagadores(){
-    for(indice = 0 ; indice < 2 ; indice++){
+    for(indice = 0 ; indice < 4 ; indice++){
         innerHTML = '<div><img class="esmagador" id="esmagador_'+indice+'" style="bottom: 100%" src="./imagens/perna.png" height="700px"><div ></div><div>'
         document.getElementById("esmagadores").innerHTML += innerHTML;
     }
@@ -185,7 +185,7 @@ function trata_colisoes(){
             
             altura_esmagador = (coordenadas_esmagador.altura + coordenadas_esmagador.y)
             altura_personagem = (coordenadas_personagem.y)
-            esmagador_esta_acima_do_personagem = altura_esmagador <= altura_personagem + 15
+            esmagador_esta_acima_do_personagem = altura_esmagador <= altura_personagem + 10
     
             esmagou = !esmagador.ja_chegou_ao_solo && esmagador_esta_acima_do_personagem
         
@@ -200,7 +200,7 @@ function trata_colisoes(){
 
 function loop() {    
     correr_com_personagem(15)
-    movimenta_esmagadores(1)
+    movimenta_esmagadores(1.5)
     trata_colisoes();
     window.requestAnimationFrame(loop);
 }

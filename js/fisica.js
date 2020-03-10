@@ -1,3 +1,9 @@
+var nome_usuario;
+nome_usuario = window.prompt("qual o seu nome?")
+
+var pontos_usuario = 0;
+atualiza_pontuacao("batata")
+
 //Configurações do Cenário
 const canvas_principal = document.getElementById("canvas_principal");
 const chao = document.getElementById("chao");
@@ -11,6 +17,8 @@ const posicoes = {};
 let quantidade_de_doces = 0;
 let momento_ultimo_doce_gerado = Date.now();
 let atraso_geracao_doces = 1500;
+
+
 
 const tipos_de_doce = [
     "bala",
@@ -29,8 +37,9 @@ function cria_canvas() {
 }
 
 function uuid() {
-    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
-        var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+        var r = Math.random() * 16 | 0,
+            v = c == 'x' ? r : (r & 0x3 | 0x8);
         return v.toString(16);
     });
 }
@@ -114,14 +123,14 @@ function extract_style_bottom_as_number(elemento) {
     return altura_do_documento - altura_equivalente_ao_percentual - elemento.offsetHeight;
 }
 
-document.addEventListener("keydown", function (e) {
+document.addEventListener("keydown", function(e) {
     switch (e.keyCode) {
         //press left key
         case 37:
             correr_com_personagem = correr_para_esquerda;
             break;
 
-        //press right key
+            //press right key
         case 39:
             correr_com_personagem = correr_para_direita;
             break;
@@ -223,7 +232,7 @@ function trata_colisoes() {
     for (contador = 0; contador < colisoes.length; contador++) {
         elemento = document.getElementById(colisoes[contador])
         if (elemento !== null) {
-            elemento.classList.forEach(function (classe) {
+            elemento.classList.forEach(function(classe) {
                 if (classe === 'esmagador') {
                     trata_colisao_esmagador(elemento)
                 }
@@ -250,14 +259,18 @@ function trata_colisao_esmagador(esmagador) {
 
     if (esmagou) {
         window.location.reload();
-        alert('perdeu!');
+        alert(nome_usuario + " você perdeu!");
     }
 }
 
 function trata_colisao_doce(doce) {
     left = Math.random() * 95;
     doce.parentNode.removeChild(doce);
+
     quantidade_de_doces--;
+
+    pontos_usuario = pontos_usuario + 1;
+    atualiza_pontuacao(pontos_usuario);
 }
 
 function gera_doces() {
@@ -277,8 +290,9 @@ function gera_doces() {
     }
 }
 
-function atualiza_pontuacao(pontos) {
-    document.getElementById("pontos").innerHTML = pontos
+function atualiza_pontuacao(conteudo) {
+    document.getElementById("pontos").innerHTML = conteudo
+    console.log("pegou um doce")
 }
 
 function loop() {

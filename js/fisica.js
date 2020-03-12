@@ -1,7 +1,9 @@
 var nome_usuario;
+//usuario responde o nome
 nome_usuario = window.prompt("qual o seu nome?")
-
+var velocidade = 15;
 var pontos_usuario = 0;
+var contagem_doces =0;
 atualiza_pontuacao("batata")
 
 //Configurações do Cenário
@@ -264,13 +266,23 @@ function trata_colisao_esmagador(esmagador) {
 }
 
 function trata_colisao_doce(doce) {
+    alert("diminuiu velocidade. a velocidade e: " + velocidade +" a contagem_doce e: "+contagem_doces)
     left = Math.random() * 95;
     doce.parentNode.removeChild(doce);
 
     quantidade_de_doces--;
 
+    contagem_doces = contagem_doces +1;
+    //contagem_doces += 1;
+
+
+
     pontos_usuario = pontos_usuario + 1;
     atualiza_pontuacao(pontos_usuario);
+    if (contagem_doces == 2) {
+        velocidade = velocidade - 1
+        contagem_doces = 0;
+    }
 }
 
 function gera_doces() {
@@ -296,10 +308,17 @@ function atualiza_pontuacao(conteudo) {
 }
 
 function loop() {
-    correr_com_personagem(15)
-    movimenta_esmagadores(1.5)
-    trata_colisoes();
-    gera_doces();
+
+    if (nome_usuario.trim() == "") {
+        nome_usuario = window.prompt("qual o seu nome?")
+    } else {
+
+        correr_com_personagem(velocidade)
+        movimenta_esmagadores(1.5)
+        trata_colisoes();
+        gera_doces();
+    }
+
     window.requestAnimationFrame(loop);
 }
 

@@ -3,8 +3,28 @@ var nome_usuario;
 nome_usuario = window.prompt("qual o seu nome?")
 var velocidade = 15;
 var pontos_usuario = 0;
-var contagem_doces =0;
+var contagem_doces = 0;
 atualiza_pontuacao("batata")
+
+var idade;
+idade = window.prompt("qual a sua idade?")
+    // if (isNaN(idade)) {
+    //     window.location.reload();
+    //     alert(nome_usuario + "Idade inadequada!");
+    // }
+
+// 20                   false       false           false
+var idadeInvalida = (isNaN(idade) || idade < 7 || idade > 120)
+
+if (idadeInvalida) {
+    window.location.reload();
+    alert(nome_usuario + "Idade inadequada 1!");
+}
+
+if (!Number.isInteger(Number(idade))) {
+    window.location.reload();
+    alert(nome_usuario + "Idade inadequada 2! idade: "+idade);
+}
 
 //Configurações do Cenário
 const canvas_principal = document.getElementById("canvas_principal");
@@ -266,13 +286,13 @@ function trata_colisao_esmagador(esmagador) {
 }
 
 function trata_colisao_doce(doce) {
-    alert("diminuiu velocidade. a velocidade e: " + velocidade +" a contagem_doce e: "+contagem_doces)
+    alert("diminuiu velocidade. a velocidade e: " + velocidade + " a contagem_doce e: " + contagem_doces)
     left = Math.random() * 95;
     doce.parentNode.removeChild(doce);
 
     quantidade_de_doces--;
 
-    contagem_doces = contagem_doces +1;
+    contagem_doces = contagem_doces + 1;
     //contagem_doces += 1;
 
 

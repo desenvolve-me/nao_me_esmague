@@ -4,6 +4,8 @@ nome_usuario = window.prompt("qual o seu nome?")
 var velocidade = 15;
 var pontos_usuario = 0;
 var contagem_doces = 0;
+var nivel = 0;
+var contador_pontos = 0;
 atualiza_pontuacao("batata")
 
 var idade;
@@ -23,7 +25,7 @@ if (idadeInvalida) {
 
 if (!Number.isInteger(Number(idade))) {
     window.location.reload();
-    alert(nome_usuario + "Idade inadequada 2! idade: "+idade);
+    alert(nome_usuario + "Idade inadequada 2! idade: " + idade);
 }
 
 //Configurações do Cenário
@@ -286,7 +288,7 @@ function trata_colisao_esmagador(esmagador) {
 }
 
 function trata_colisao_doce(doce) {
-    alert("diminuiu velocidade. a velocidade e: " + velocidade + " a contagem_doce e: " + contagem_doces)
+
     left = Math.random() * 95;
     doce.parentNode.removeChild(doce);
 
@@ -295,9 +297,55 @@ function trata_colisao_doce(doce) {
     contagem_doces = contagem_doces + 1;
     //contagem_doces += 1;
 
+    // doce.classList[1] //doce sorvete | doce bala | doce pirulito
+    // if (doce.classList[1] == "bala") {
+    //     pontos_usuario = pontos_usuario + 1;
+    // } else if (doce.classList[1] == "pirulito") {
+    //     pontos_usuario = pontos_usuario + 2;
+    // } else if (doce.classList[1] == "sorvete") {
+    //     pontos_usuario = pontos_usuario + 3;
+    // }
+
+    //switch
+    switch (doce.classList[1]) {
+        case "bala":
+            pontos_usuario = pontos_usuario + 1
+            contador_pontos = contador_pontos + 1;
+            alert("pegou bala")
+            break
+
+        case "pirulito":
+            pontos_usuario = pontos_usuario + 2
+            contador_pontos = contador_pontos + 2;
+            alert("pegou pirulito")
+            break
 
 
-    pontos_usuario = pontos_usuario + 1;
+        case "sorvete":
+            pontos_usuario = pontos_usuario + 3;
+            contador_pontos = contador_pontos + 3;
+            alert("pegou sorvete")
+            break
+
+        default:
+            pontos_usuario = pontos_usuario - 1;
+            //alert("tipo de doce com pontuacao não definida")
+    }
+
+    //if(nivel == pontos_usuario + 10)
+    // if (pontos_usuario % 10 == 0) {
+    //     alert("caiu no if")
+    //     nivel = nivel + 1;
+    // }
+
+
+    //contador = 4
+    //pontos_usuario = 12
+    if (contador_pontos > 10) {
+        nivel = nivel + 1
+        contador_pontos = 0;
+    }
+
     atualiza_pontuacao(pontos_usuario);
     if (contagem_doces == 2) {
         velocidade = velocidade - 1

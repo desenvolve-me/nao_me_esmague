@@ -4,8 +4,9 @@ nome_usuario = window.prompt("qual o seu nome?")
 var velocidade = 15;
 var pontos_usuario = 0;
 var contagem_doces = 0;
-var nivel = 0;
+var nivel = 0; //2
 var contador_pontos = 0;
+var curiosidades = ["txt1", "txt2", "txt3", "txt4", "txt5", "txt6"]
 atualiza_pontuacao("batata")
 
 var idade;
@@ -283,7 +284,11 @@ function trata_colisao_esmagador(esmagador) {
 
     if (esmagou) {
         window.location.reload();
-        alert(nome_usuario + " você perdeu!");
+        //alert(nome_usuario + " você perdeu!");
+       
+        for (var indice = 0; indice < nivel; indice++) {
+            alert(curiosidades[indice] + "\nindice: " + indice)
+        }
     }
 }
 
@@ -311,20 +316,17 @@ function trata_colisao_doce(doce) {
         case "bala":
             pontos_usuario = pontos_usuario + 1
             contador_pontos = contador_pontos + 1;
-            alert("pegou bala")
             break
 
         case "pirulito":
             pontos_usuario = pontos_usuario + 2
             contador_pontos = contador_pontos + 2;
-            alert("pegou pirulito")
             break
 
 
         case "sorvete":
             pontos_usuario = pontos_usuario + 3;
             contador_pontos = contador_pontos + 3;
-            alert("pegou sorvete")
             break
 
         default:
@@ -338,13 +340,15 @@ function trata_colisao_doce(doce) {
     //     nivel = nivel + 1;
     // }
 
-
+    //nivel = 0
     //contador = 4
     //pontos_usuario = 12
     if (contador_pontos > 10) {
+        alert(curiosidades[nivel])
         nivel = nivel + 1
         contador_pontos = 0;
     }
+
 
     atualiza_pontuacao(pontos_usuario);
     if (contagem_doces == 2) {

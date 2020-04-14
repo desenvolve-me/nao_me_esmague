@@ -144,7 +144,7 @@
 
 // while (fator <=10){
 //     alert (fixo + "*" + fator + "=" + fixo * fator)
-    
+
 //     /*incremento*/
 //     fator++
 // }
@@ -184,7 +184,7 @@
 //     }
 //     indice++  
 // } while(idades[indice]< 18)
-        
+
 
 // while (idades[indice] < 18) {
 //     //nada
@@ -194,15 +194,97 @@
 
 // alert(nomes[indice] + " " + idades[indice])
 
-             //0      //1       //2      //3       //4     //5     => tamanho é 6
-var nomes = ["Luiz", "Adriana", "Yago", "Marcos", "Jean", "Kassia"]
-var indice = 0 
+//0      //1       //2      //3       //4     //5     => tamanho é 6
+// var nomes = ["Luiz", "Adriana", "Yago", "Marcos", "Jean", "Kassia"]
+// var indice = 0
 
-do {
-    nomes[indice] = nomes[indice].toUpperCase()
-    alert (nomes[indice])
-    indice++ 
-} while (indice <  nomes.length)
-            
+// do {
+//     nomes[indice] = nomes[indice].toUpperCase()
+//     alert(nomes[indice])
+//     indice++
+// } while (indice < nomes.length)
+
 //enquanto não chegar na ultima posicão
 //.toUpperCase()
+
+// var nomes = ['yago', 'kassia', 'jean', 'outro nome']
+// var idade = [12, 14, 13, 15]
+// for (var indice = 0; indice < nomes.length; indice++) {
+//     alert(nomes[indice])
+// }
+
+// for (var nome of nomes) {
+//     alert(nome)
+// }
+
+// // Array -> Estrutura para armazenar dados
+// var cpfs = new Array(41365822244, 41365822245, 41365822244, 41365822245, 41365822246)
+
+
+// // Set -> não pode ter elementos duplicados
+
+// var clientesComDesconto = []
+//     // var clientesComDesconto = [41365822244, 41365822245, 41365822246]
+
+// for (var indice = 0; indice < cpfs.length; indice++) {
+//     //clientesComDesconto[indice] = cpfs[indice]
+
+//     // cliente com desconto ainda não tem esse CPF
+//     if (!clientesComDesconto.includes(cpfs[indice])) {
+//         clientesComDesconto.push(cpfs[indice])
+//     }
+// }
+
+// console.log("cpfs com desconto")
+// console.log(clientesComDesconto)
+
+// clientesComDesconto.push("batata")
+// clientesComDesconto.includes(41365822244) //true
+
+
+
+//concole.log (nenhum cpf duplicado)
+
+
+
+
+
+
+
+
+// Array -> Estrutura para armazenar dados
+// var cpfs = new Array(41365822244, 41365822245, 41365822244, 41365822245, 41365822246)
+
+// // Set -> não pode ter elementos duplicados
+
+// var clientesComDesconto = new Set()
+
+
+// for (var indice = 0; indice < cpfs.length; indice++) {
+//     clientesComDesconto.add(cpfs[indice])
+// }
+// console.log("cpfs com desconto")
+// console.log(clientesComDesconto)
+
+
+
+
+// var nomes = ['yago', 'kassia', 'jean', 'luiz'] //Array
+// var idades = [39, 18, 24, 22] // Array
+
+var pessoas = [{ 'nome': 'yago', 'idade': '39' }, { 'nome': 'kassia', 'idade': '18' }] // array
+
+var pessoa = {
+
+        //chave:valor
+        'nome': 'yago',        
+        'idade': 39
+    } //dicionário ou Objeto
+
+
+    pessoa['nome'] 
+
+var carro = {
+    'marca': 'GM',
+    'modelo': 'corsa'
+}

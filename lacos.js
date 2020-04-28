@@ -272,19 +272,125 @@
 // var nomes = ['yago', 'kassia', 'jean', 'luiz'] //Array
 // var idades = [39, 18, 24, 22] // Array
 
-var pessoas = [{ 'nome': 'yago', 'idade': '39' }, { 'nome': 'kassia', 'idade': '18' }] // array
+var pessoas = [{ 'nome': 'yago', 'idade': 39 }, { 'nome': 'kassia', 'idade': 18 }] // array
 
+// var pessoa = {
+
+//         //chave:valor
+//         'nome': 'yago',        
+//         'idade': 39
+//     } //dicionário ou Objeto
+
+
+// pessoa['nome'] 
+
+// var carro = {
+//     'marca': 'GM',
+//     'modelo': 'corsa'
+// }
+
+
+
+
+// estruta de dados
+// lista|array, sets e dicionários 
+// pilhas, filas,   
+
+
+//Array | lista
+var nomes = ["Adriana", "Kassia", "Jean"]
+var idades = new Array(); //[18,18,19,19,20]
+idades[0] = 18
+idades[1] = 18
+idades.push(19)
+idades.push(19)
+idades.push(20)
+
+
+
+// Set não aceita valores duplicados
+//["02345678909", "022397409045", "022397409045"]
+var cpf = new Set() // []
+cpf.add("02345678909")
+cpf.add("02345678908")
+cpf.add("02345678907")
+//console.log(cpf);
+
+
+//Dicionários
 var pessoa = {
-
-        //chave:valor
-        'nome': 'yago',        
-        'idade': 39
-    } //dicionário ou Objeto
-
-
-    pessoa['nome'] 
-
-var carro = {
-    'marca': 'GM',
-    'modelo': 'corsa'
+    //Chave:Valor
+    "nome": "Luiz",
+    "idade": 25
 }
+
+// var Adriana = {
+//     //Chave:Valor
+//     "nome": "Adriana",
+//     "idade": 35
+// }   
+// var Jean = {
+//         //Chave:Valor
+//         "nome": "Jean",
+//         "idade": 28
+// }
+// var Kassia = {
+//             //Chave:Valor
+//             "nome": "Kassia",
+//             "idade": 28
+// }
+// var Luiz = {
+//     //Chave:Valor
+//     "nome": "Luiz",
+//     "idade": 36
+// }
+
+//alert(pessoa["nome"])
+//alert(pessoa.idade)
+
+// chave E colchetes
+var pessoas = [ 
+    {"nome": "Adriana", "idade": 15, "grupo": "teste"}, //indice 0
+    {"nome": "Jean", "idade": 28} , //indice 1
+    {"nome": "Kassia", "idade": 17}, // indice 2
+    {"nome": "Luiz", "idade": 18} // indice 3
+]
+
+// Agrupar
+var grupos = {
+    "maiores":[],
+    "menores":[]
+}
+ 
+// pessoas[0].genero = "...";
+
+//if (condicao) {...} else {...}
+for (var indice = pessoas.length - 1 ; indice >=0 ;indice--){
+    if (pessoas[indice].idade >= 18)
+        pessoas[indice].grupo = "maior"
+    else 
+        pessoas[indice].grupo = "menor"
+
+    // alert (pessoas[indice].nome)
+    // alert (pessoas[indice]["nome"])
+    console.log(pessoas[indice])
+}
+
+
+// {"nome": "Adriana", "idade": 15, "grupo": "menor"}
+// {"nome": "Jean", "idade": 28, "grupo": "maior"}
+
+//pessoas[0]  ----> {"nome": "Adriana", "idade": 15}
+
+
+// for(var indice = 0 ; indice < idades.lenght ; indice ++){idades[2]}
+
+// Exercícios:
+
+// 1 - Exibir um alert com o nome do usuário caso ele seja maior de idade
+
+// 2 - Separar os usuários em dois grupos: Maiores e Menores de idade
+
+// 3 - Para cada pessoa da lista adicionar
+
+

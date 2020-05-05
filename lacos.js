@@ -314,7 +314,7 @@ var cpf = new Set() // []
 cpf.add("02345678909")
 cpf.add("02345678908")
 cpf.add("02345678907")
-//console.log(cpf);
+    //console.log(cpf);
 
 
 //Dicionários
@@ -349,32 +349,26 @@ var pessoa = {
 //alert(pessoa.idade)
 
 // chave E colchetes
-var pessoas = [ 
-    {"nome": "Adriana", "idade": 15, "grupo": "teste"}, //indice 0
-    {"nome": "Jean", "idade": 28} , //indice 1
-    {"nome": "Kassia", "idade": 17}, // indice 2
-    {"nome": "Luiz", "idade": 18} // indice 3
-]
+// var pessoas = [ 
+//     {"nome": "Adriana", "idade": 15, "grupo": "teste"}, //indice 0
+//     {"nome": "Jean", "idade": 28} , //indice 1
+//     {"nome": "Kassia", "idade": 17}, // indice 2
+//     {"nome": "Luiz", "idade": 18} // indice 3
+// ]
 
-// Agrupar
-var grupos = {
-    "maiores":[],
-    "menores":[]
-}
- 
-// pessoas[0].genero = "...";
+// // pessoas[0].genero = "...";
 
-//if (condicao) {...} else {...}
-for (var indice = pessoas.length - 1 ; indice >=0 ;indice--){
-    if (pessoas[indice].idade >= 18)
-        pessoas[indice].grupo = "maior"
-    else 
-        pessoas[indice].grupo = "menor"
+// //if (condicao) {...} else {...}
+// for (var indice = pessoas.length - 1 ; indice >=0 ;indice--){
+//     if (pessoas[indice].idade >= 18)
+//         pessoas[indice].grupo = "maior"
+//     else 
+//         pessoas[indice].grupo = "menor"
 
-    // alert (pessoas[indice].nome)
-    // alert (pessoas[indice]["nome"])
-    console.log(pessoas[indice])
-}
+//     // alert (pessoas[indice].nome)
+//     // alert (pessoas[indice]["nome"])
+//     console.log(pessoas[indice])
+// }
 
 
 // {"nome": "Adriana", "idade": 15, "grupo": "menor"}
@@ -391,6 +385,76 @@ for (var indice = pessoas.length - 1 ; indice >=0 ;indice--){
 
 // 2 - Separar os usuários em dois grupos: Maiores e Menores de idade
 
-// 3 - Para cada pessoa da lista adicionar
 
 
+
+// var pessoas = [
+//     //Dicionário SEMPRE chave:valor
+//     { "nome": "Adriana", "idade": 15 }, //indice 0
+//     { "nome": "Jean", "idade": 28 }, //indice 1
+//     { "nome": "Kassia", "idade": 17 }, // indice 2
+//     { "nome": "Luiz", "idade": 18 } // indice 3
+// ]
+
+//Passar por todos os elementos da lista de pessoas - OK
+//Verificar a idade - 
+//Se for maior de idade vai para lista/grupo de maiores
+//Se for menor de idade vai para lista/grupo de menores
+
+// Agrupar
+//Dicionários Chave:valor => SEMPRE
+// var grupos = {
+//     "maiores": [], //Lista vazia
+//     "menores": []
+// }
+
+// for (var indice = 0, contador = 0; indice < pessoas.length; indice++) {
+//     //Muito importante:
+//     // - Array pegamos os elementos usando a posição. exemplo: pessoas[0]
+//     // - Dicionário pegamos os elementos através da chave. exmplo: grupos.maiores
+
+//     var pessoa = pessoas[indice]; //{ "nome": "Adriana", "idade": 15 }
+
+//     if (pessoa.idade >= 18) {
+//         grupos.maiores.push(pessoa)
+//             // grupos.maiores[index] = pessoa   
+//         console.log(pessoa.nome)
+//     } else {
+//         grupos.menores.push(pessoa)
+//         console.log(pessoa.nome)
+//     }
+// }
+// console.log(grupos)
+
+
+// Agrupamentos => Tipos de carros
+// Sedans
+// SUV's
+// Hatch
+
+
+// Arrays usamos [] , pegamos os elementos pela posição
+// Dicionários usamos {}
+var carros = [
+    { "modelo": "Corsa", "ano": "2012", "categoria": "Sedan", "cor": "rosa" },
+    { "modelo": "Uno", "ano": "2008", "categoria": "Hatch", "cor": "amarelo" },
+    { "modelo": "Fusca", "ano": "1987", "categoria": "Hatch", "cor": "azul" },
+    { "modelo": "DelRey", "ano": "1984", "categoria": "Sedan", "cor": "vermelho" },
+    { "modelo": "Evoque", "ano": "2020", "categoria": "SUV", "cor": "branco" },
+    { "modelo": "Troller", "ano": "1990", "categoria": "SUV", "cor": "bege" }
+]
+
+var Tipos = {
+    "Sedan": [],
+    "SUV": [],
+    "Hatch": [],
+} 
+
+for (var carro of carros) {
+    console.log("Modelo: " + carro.modelo)
+    if (carro.modelo == "Uno") {
+        console.log(carro.ano + " " + carro.categoria + " " + carro.cor)
+        break
+    }
+}
+console.log(Tipos)

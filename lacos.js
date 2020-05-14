@@ -435,26 +435,116 @@ var pessoa = {
 
 // Arrays usamos [] , pegamos os elementos pela posição
 // Dicionários usamos {}
-var carros = [
-    { "modelo": "Corsa", "ano": "2012", "categoria": "Sedan", "cor": "rosa" },
-    { "modelo": "Uno", "ano": "2008", "categoria": "Hatch", "cor": "amarelo" },
-    { "modelo": "Fusca", "ano": "1987", "categoria": "Hatch", "cor": "azul" },
-    { "modelo": "DelRey", "ano": "1984", "categoria": "Sedan", "cor": "vermelho" },
-    { "modelo": "Evoque", "ano": "2020", "categoria": "SUV", "cor": "branco" },
-    { "modelo": "Troller", "ano": "1990", "categoria": "SUV", "cor": "bege" }
-]
+// var carros = [
+//     { "modelo": "Corsa", "ano": "2012", "categoria": "Sedan", "cor": "rosa" }, // =>carro
+//     { "modelo": "Uno", "ano": "2008", "categoria": "Hatch", "cor": "amarelo" },
+//     { "modelo": "Fusca", "ano": "1987", "categoria": "Hatch", "cor": "azul" },
+//     { "modelo": "DelRey", "ano": "1984", "categoria": "Sedan", "cor": "vermelho" },
+//     { "modelo": "Evoque", "ano": "2020", "categoria": "SUV", "cor": "branco" },
+//     { "modelo": "Troller", "ano": "1990", "categoria": "SUV", "cor": "bege" }
+// ]
 
-var Tipos = {
-    "Sedan": [],
-    "SUV": [],
-    "Hatch": [],
-} 
+// var Tipos = {
+//     "Sedan": [],
+//     "SUV": [],
+//     "Hatch": [],
+// } 
 
-for (var carro of carros) {
-    console.log("Modelo: " + carro.modelo)
-    if (carro.modelo == "Uno") {
-        console.log(carro.ano + " " + carro.categoria + " " + carro.cor)
-        break
-    }
-}
-console.log(Tipos)
+// // for (var carro of carros) {
+// //     console.log("Modelo: " + carro.modelo)
+// //     if (carro.modelo == "Uno") {
+// //         console.log(carro.ano + " " + carro.categoria + " " + carro.cor)
+// //         break
+// //     }
+// // }
+
+// for(carro of carros){
+//     if(carro.categoria=="Sedan"){
+//        Tipos.Sedan.push(carro)
+//     } else if (carro.categoria=="SUV"){
+//         Tipos.SUV.push(carro)
+//     }else{
+//         Tipos.Hatch.push(carro)
+//     }
+// }
+// console.log(Tipos)
+
+//Cada pessoa deve 3 propriedades: nomeCompleto, primeiroNome e ultimoNome
+
+// var pessoas = [
+//     { "nomeCompleto": "Yago Jesus da Silva" },
+//     { "nomeCompleto": "Adriana Pommot" },
+//     { "nomeCompleto": "Kassia Silva" },
+//     { "nomeCompleto": "Jean Assis" },
+//     { "nomeCompleto": "Luiz Fagner" }
+// ]
+// for (pessoa of pessoas) {
+//     var listaNomesDaPessoa = pessoa.nomeCompleto.split(" "); //Array com o nome e sobrenome separados
+//     // ["Yago", "Jesus", "da", "Silva"] -> tamanho 4 - 1
+//     //chave do dicionário que ainda não existe
+//     pessoa.primeiroNome = listaNomesDaPessoa[0]
+//         //pessoa.ultimoNome = listaNomesDaPessoa[1]
+//     var ultimaPosicaoDoArray = listaNomesDaPessoa.length - 1
+//     pessoa.ultimoNome = listaNomesDaPessoa[ultimaPosicaoDoArray]
+// }
+
+// console.log(pessoas)
+
+
+// var pessoas = [
+//     { "nomeCompleto": "      Yago Silva" },
+//     { "nomeCompleto": " Adriana Pommot      " },
+//     { "nomeCompleto": "    Kassia Silva    " },
+//     { "nomeCompleto": "    Jean Assis    " },
+//     { "nomeCompleto": "    Luiz Fagner    " }
+// ]
+// for (pessoa of pessoas) {
+//     pessoa.nomeCompleto = pessoa.nomeCompleto.trim()
+// }
+// console.log(pessoas)
+
+
+// var carros = [
+//         { "modelo": "Corsa", "ano": "2012" },
+//         { "modelo": "Uno" },
+//         { "modelo": "Fusca" },
+//         { "modelo": "DelRey" },
+//         { "modelo": "Evoque" },
+//         { "modelo": "Troller" }
+//     ] //array
+
+
+// for (carro of carros) {
+//     carro.modelo = carro.modelo.toUpperCase()
+//         //carro.modelo = carro.modelo.pop()
+//         //carro.pop('ano')
+//     delete carro.ano
+//         //console.log(carro.modelo.toUpperCase())
+// }
+// console.log(carros)
+
+
+// // Saida esperad
+// // { "modelo": "CORSA"},
+// // { "modelo": "UNO"},
+// // { "modelo": "FUSCA"},
+// // { "modelo": "DELREY"},
+// // { "modelo": "EVOQUE"},
+// // { "modelo": "TROLLER" }
+
+//Exibir em um alert  o nome e a idade dos filhos de joão maiores de idade
+
+// var pessoa = {
+//     "nome": "João",
+//     "filhos": [
+//         { "nome": "Caio", "idade": 19 },
+//         { "nome": "Amanda", "idade": 18 },
+//         { "nome": "Sara", "idade": 15 },
+//     ]
+// }
+
+// for (filho of pessoa.filhos) {
+//     if (filho.idade >= 18) {
+//         alert(filho.nome + " " + filho.idade + " anos") //Caio 19 anos
+//     }
+// }
